@@ -4,7 +4,13 @@ import '../src/Styles/Info_style.css';
 
 export const Regular_expenses_table=(props)=>{
     
-const [rerender,setRerender] = useState(0)
+const [count,setCounter] = useState(0)
+const [val1,setval1] = useState()
+
+const handle1=(e)=>{
+    setval1(e.target.value)
+    return 0
+}
     const Expenses=[
         {
             Expense : 'House Rent',
@@ -31,9 +37,53 @@ const [rerender,setRerender] = useState(0)
         Rg_expenses.push(temp)
         console.log(Rg_expenses)
         SetRg_expenses(Rg_expenses)
-        let i = rerender+1
-        setRerender(i)
+        let i = count+1
+        setCounter(i)
         return
+    } 
+
+
+    const delete_expense=(e)=>{
+        let index = 0
+        let temp = e.target
+        let current_expense = temp.parentElement.parentElement.parentElement.firstChild.innerHTML
+        Rg_expenses.forEach(element => {
+            console.log(current_expense)
+            console.log(Rg_expenses)
+            if(element.Expense===current_expense){
+                Rg_expenses.splice(index,1)
+            }
+            index++
+        });
+        console.log(Rg_expenses)
+        SetRg_expenses(Rg_expenses)
+        let i = count+1
+        setCounter(i)
+        return 0
+    }
+
+    const update_expense=(e)=>{
+        let index = 0
+        let temp = e.target
+        let current_expense = temp.parentElement.parentElement.parentElement.firstChild.innerHTML
+        let current_value = parseInt(temp.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.value)
+        console.log(current_expense)
+        console.log(current_value)
+        console.log(temp.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.value)
+        Rg_expenses.forEach(element => {
+            console.log(current_expense)
+            console.log(Rg_expenses)
+            if(element.Expense===current_expense){
+                Rg_expenses[index].Amount = current_value
+            }
+            index++
+        });
+        console.log(Rg_expenses)
+        SetRg_expenses(Rg_expenses)
+        let i = count+1
+        setCounter(i)
+        document.getElementById('expense_input_value').value=''
+        return 0
     }
 
 
@@ -41,6 +91,9 @@ const [rerender,setRerender] = useState(0)
         <tr className='Rg_expenses_table_row'>
         <td>{i.Expense}</td>
         <td>{i.Amount}</td>
+        <input id='expense_input_value' placeholder='Enter expense'></input>
+        <td><button className='table_button' onClick={(e)=>update_expense(e)}><span class="material-symbols-outlined">check</span></button></td>
+        <td><button className='table_button' onClick={(e)=>delete_expense(e)}><span class="material-symbols-outlined">delete</span></button></td>
         </tr>
     )
     
@@ -48,6 +101,13 @@ const [rerender,setRerender] = useState(0)
         <>
         <button id='Rg_expenses_add_button' onClick={(e)=>add_custom_expense(e) }>ADD</button>
         <table id='Rg_expenses_table'>
+        <tr className='Rg_expenses_table_row'>
+        <th>Expense</th>
+        <th>Amount</th>
+        <th align='left'>Update Expense</th>
+        <th>Submit</th>
+        <th>Delete</th>
+        </tr>
                 {print_expenses} 
         </table>
         </>
