@@ -1,0 +1,71 @@
+body{
+    background-color: azure;
+}
+
+.Header{
+  background-color: rgb(86, 86, 86);
+  max-height: 60px;
+}
+.flexbox_container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    /* justify-content:  */
+}
+
+.flex_item:nth-child(4){
+    position: absolute;
+    right: 10px;
+}
+
+.flex_item{
+    background-color: rgb(74, 148, 238);
+    border-width: 0px;
+    flex-wrap: flex;
+}
+.flex_item:hover{
+    background-color: rgb(184, 181, 187);
+}
+
+.flexbox_container button {
+    --color: #000000;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 1.6em;
+    /* line-height: 2.5em; */
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  .flexbox_container button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 100%;
+  }
+  
+  .flexbox_container button:hover {
+    color: white;
+  }
+  
+  button.flexbox_container button on:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.5s all;
+  }
+  
+  .flexbox_container button:hover::before {
+    top: -30px;
+    left: -30px;
+  }
+  

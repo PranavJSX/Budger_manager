@@ -1,0 +1,83 @@
+
+
+.flex_1{
+    display: flex;
+    flex-direction: horizontal;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    justify-content: space-between;
+}
+
+.flex_1:nth-child(n){
+    /* font: bold; */
+    width: 200px;
+    border: silver;
+    
+}
+
+.flex_1 div{
+    border-width: 10px;
+    border-style: solid;
+    min-width: 400px;
+    min-height: 400px;
+    margin-right: 10px;
+}
+
+.flex_1 div:hover{
+    background-color: rgb(74, 148, 238);
+    transform: scale(1.02);
+    transition-delay: 60ms;
+    transition:all .90s ease;
+}
+
+#flex-1{
+    margin-left: 10px;
+}
+
+#Rg_expenses_table{
+    border: 2px solid;
+    border: solid;
+    width: 90%;
+    align-self: center;
+    max-height: 400px;
+}
+
+.Rg_expenses_table_row{
+    width: fit-content;
+}
+
+.Rg_expenses_table_row:hover{
+    background-color: rgb(231, 231, 231);
+    transform:translateX(2%);
+    transition: all .20s ease-out;
+    transition-duration: 90ms;
+}
+
+.local_button:hover{
+    transform: scale(1.2);
+}
+
+.local_button{
+    max-width: 20px;
+}
+
+.local_button:hover{
+    background-color: black;
+    -webkit-text-fill-color: blueviolet;
+}
+
+#total_td{
+    position:relative;
+    align-self: bottom;
+}
+
+.increase_button{
+    border-radius: 5px;
+    background-color: rgb(255, 189, 189);
+}
+
+
+.decrease_button{
+    
+    border-radius: 5px;
+    background-color: rgb(255, 189, 189);
+}
