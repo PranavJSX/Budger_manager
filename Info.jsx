@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../src/Styles/Info_style.css'; 
 import { Regular_expenses_table } from './Regular_expenses_table';
 
-export const Info = () => {
+export const Info = (props) => {
   const [input1,setInput1] = useState('')
   const [input2,setInput2] = useState('')
-  const [show_var,setShow_var] = useState(0)
+  const [total,setTotal] = useState(0)
   
-  const show_custom_Rg_expenses=()=>{
-    setShow_var(1)
-    console.log('Add button clicked')
+  const handle_total=(val)=>{
+    props.get_total(val)
+    setTotal(val)
   }
   return (
     <>
@@ -21,12 +21,12 @@ export const Info = () => {
           <input type='text' id = "Rg_expenses_input_value" style={inputstyle} value={input2} onChange={(e)=>setInput2(e.target.value)} placeholder='Value'></input>
           </>
           {
-          <Regular_expenses_table input1={input1} input2={input2} add_button_clicked={show_var}/>
+          <Regular_expenses_table input1={input1} input2={input2} totalfunction={handle_total}/>
           }
           <tr></tr>
           <table>
             <tr>
-              <td id='total_td'>Total:</td>
+              <td id='total_td'>Total:{total}</td>
             </tr>
           </table>
         </div>
