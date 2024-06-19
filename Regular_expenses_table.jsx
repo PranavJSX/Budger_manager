@@ -5,12 +5,8 @@ import '../src/Styles/Info_style.css';
 export const Regular_expenses_table=(props)=>{
     
 const [count,setCounter] = useState(0)
-const [val1,setval1] = useState()
 
-const handle1=(e)=>{
-    setval1(e.target.value)
-    return 0
-}
+
     const Expenses=[
         {
             Expense : 'House Rent',
@@ -39,6 +35,7 @@ const handle1=(e)=>{
         SetRg_expenses(Rg_expenses)
         let i = count+1
         setCounter(i)
+        
         return
     } 
 
@@ -59,6 +56,7 @@ const handle1=(e)=>{
         SetRg_expenses(Rg_expenses)
         let i = count+1
         setCounter(i)
+        get_total()
         return 0
     }
 
@@ -82,20 +80,30 @@ const handle1=(e)=>{
         SetRg_expenses(Rg_expenses)
         let i = count+1
         setCounter(i)
-        document.getElementById('expense_input_value').value=''
+        temp.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.value=''  
+        get_total()
         return 0
     }
 
 
     const print_expenses = Rg_expenses.map(i=>
         <tr className='Rg_expenses_table_row'>
-        <td>{i.Expense}</td>
+        <td className='set_td_style'>{i.Expense}</td>
         <td>{i.Amount}</td>
-        <input id='expense_input_value' placeholder='Enter expense'></input>
+        <input className='expense_input_value' placeholder='Enter expense'></input>
         <td><button className='table_button' onClick={(e)=>update_expense(e)}><span class="material-symbols-outlined">check</span></button></td>
         <td><button className='table_button' onClick={(e)=>delete_expense(e)}><span class="material-symbols-outlined">delete</span></button></td>
         </tr>
     )
+    const get_total=()=>{
+        let temp=0
+        console.log('Here')
+        Rg_expenses.map(i=>(
+            temp = i.Amount+temp
+        ))
+        console.log(temp)
+        props.totalfunction(temp)
+    }
     
     return(
         <>
