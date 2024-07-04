@@ -1,0 +1,24 @@
+
+.my_image{
+    height: 200px;
+}
+
+
+.grid-1{
+    display: grid;
+    border: solid;
+    border-width: 5px;
+    max-height: fit-content;
+    /* max-width: ; */
+    margin-left: 10px;
+    border-color: rgb(255, 156, 156);
+    background-color: rgb(132, 132, 132);
+    color: azure;
+    grid-template-columns: 450px 200px 200px;
+}
+
+
+.grid-items{
+    vertical-align:baseline;
+    margin-top: 20px;
+}

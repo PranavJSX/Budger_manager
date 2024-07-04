@@ -98,8 +98,31 @@
 }
 
 
+#Extra_expenses_table{
+    border: 2px solid;
+    border: solid;
+    width: 420px;
+    align-self: center;
+    max-height: 400px;
+    table-layout:fixed;
+}
 
-.set_td_style{
-    max-width: 5px;
-    column-width: 5px;
+
+
+.Extra_expenses_table_row{
+    max-height: 0.2px;
+}
+
+
+
+
+.Extra_expenses_table_row:hover{
+    background-color: rgb(231, 231, 231);
+    transform:translateX(2%);
+    transition: all .20s ease-out;
+    transition-duration: 90ms;
+}
+
+.expense_input_value_1{
+    max-width: 100%;
 }
