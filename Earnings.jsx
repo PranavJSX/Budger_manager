@@ -49,7 +49,7 @@ export const Earnings = () => {
     index++;
     }
   )
-    let i = counter + 1
+   let i = counter + 1
     setCounter(i)
     get_total_earnings()
     return
