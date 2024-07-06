@@ -5,20 +5,21 @@
     flex-direction: horizontal;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     justify-content: space-between;
+    max-height: 600px;
+    min-height: 400px;
 }
 
 .flex_1:nth-child(n){
     /* font: bold; */
     width: 200px;
     border: silver;
-    max-height: 50px;
 }
 
 .flex_1 div{
     border-width: 10px;
     border-style: solid;
     min-width: 420px;
-    min-height: 600px;
+    /* min-height: 600px; */
     margin-right: 10px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -73,8 +74,15 @@
 }
 
 #total_td{
-    position:relative;
-    align-self: bottom;
+    position: fixed;
+    pointer-events: none;
+}
+
+.total_table{
+    position: relative;
+    /* overflow:unset; */
+    margin-bottom: 0px;
+    margin-top: 200px;
 }
 
 

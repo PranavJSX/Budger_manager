@@ -149,3 +149,7 @@
   .minus_button:hover{
     background-color:red;
   }
+
+  #earnings_list_elements:hover{
+    background-color: azure;
+  }
