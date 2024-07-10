@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import '../src/Styles/earnings_style.css';
 
-export const Earnings = () => {
+export const Earnings = (props) => {
 
   const [income_source,setincome_source] = useState('')
   const [income_amount,setincome_amount] = useState('')
@@ -31,7 +31,7 @@ export const Earnings = () => {
 
   const print_rg_earnings=rg_earnings_list.map(i=>
     <>
-      <li>{i.Incoming}:{i.Amount}   {i.icon}{console.log('printed')}</li>
+      <li id='earnings_list_elements'>{i.Incoming}:{i.Amount}   {i.icon}{console.log('printed')}</li>
     </>
   )
 
@@ -57,6 +57,10 @@ export const Earnings = () => {
 
 
   const add_income=(e)=>{
+    if(income_amount=='' || income_source=='') {
+      alert('Please enter all the fields')
+      return
+    }
     e.preventDefault()
     console.log(income_amount)
     let source = income_source
@@ -74,6 +78,9 @@ export const Earnings = () => {
     console.log(rg_earnings_list)
     let i = counter + 1
     setCounter(i)
+    setincome_amount('')
+    setincome_source('')
+    return
   }
 
 
@@ -83,6 +90,7 @@ export const Earnings = () => {
       total += parseInt(i.Amount)
     ))
     settotal_earnings(total)
+    props.total_earinings(total)
   }
 
   useEffect(()=>{
