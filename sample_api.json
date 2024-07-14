@@ -1,0 +1,23 @@
+{
+    "user_id":1234,
+    "personal_data":{
+        "first_name":"Jin",
+        "Second_name":"Sakai",
+        "dob":"05/05/1998",
+        "phone_number":1000040000
+    },
+    "invest_data":{
+        "stocks_of_interest":["MTAR" , "KCP" , "Chambal Fertilizers" , "Balrampur Chini"],
+        "mf_of_interest":["SBI Mid cap" , "HDFC FLexi Cap" , "Canara Robeco Infrastructure fund"],
+        "invested_portfolio_amount":{
+            "instocks":40000,
+            "inMF":{
+                "direct":80000,
+                "debt":20000
+            },
+            "inFD":56000
+        }        
+    },
+    "earnings_data":{},
+    "spending_data":{}
+}
