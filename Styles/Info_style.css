@@ -1,4 +1,7 @@
 
+:root{
+    --side-color-2:rgb(58, 75, 117);
+}
 
 .flex_1{
     display: flex;
@@ -7,12 +10,16 @@
     justify-content: space-between;
     max-height: 600px;
     min-height: 400px;
+    /* color: azure; */
 }
 
 .flex_1:nth-child(n){
     /* font: bold; */
     width: 200px;
-    border: silver;
+    color: rgb(58, 75, 117);
+}
+body{
+    background-color:rgb(35, 35, 35);
 }
 
 .flex_1 div{
@@ -26,10 +33,11 @@
 }
 
 .flex_1 div:hover{
-    background-color: rgb(255, 183, 183);
+    background-color: rgb(255, 255, 255);
     transform: scale(1.02);
     transition-delay: 60ms;
     transition:all .90s ease;
+    color: black;
 }
 
 #flex-1{    

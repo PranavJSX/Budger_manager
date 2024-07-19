@@ -1,0 +1,95 @@
+
+
+#invested_body{
+    background-color:inherit;
+    min-height: 900%;
+    margin-inline: 200px;
+}
+
+#invested_section1{
+    background-color: inherit;
+    border: solid; 
+     border-width: 2px;
+    max-width: fit-content;
+    min-height: fit-content;
+    min-width: 100%;
+}
+
+#investedflex{
+    display: flex;
+    flex-direction:row;
+    gap: 40px;
+    background-color: (35, 35, 35)
+}
+
+.invested_section1:hover{
+    transform: scale(1);
+    transition-delay: 60ms;
+    transition:all .90s ease;
+    background-color:var( --side-color-2);
+    
+    box-shadow: 10px 5px 5px red;
+}
+.my_pieChart:hover{
+    transform: scale(1.00);
+    transition-delay: 30ms;
+    transition: all .90s ease;
+    background-color: var(--side-color-2);
+}
+
+#mychart{
+    background-color: var(--side-color-2);
+}
+
+
+
+#invested_section2{
+    background-color: azure;
+    /* border: solid; */
+    /* border-width: 2px; */
+    border-style: double;
+    width: 60%;
+}
+
+#invested_grid{
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    column-gap: 10px;
+    /* grid-template-areas:''footer footer footer footer ; */
+    /* margin-inline: 450px; */
+}
+
+
+.Invested_grid_1{
+    background-color:rgb(90, 94, 98);
+    border: solid;
+    border-width: 2px;
+    max-width: 600px;
+    color:rgb(255, 255, 255);
+}
+
+.Invested_grid_1:hover{
+    background-color: azure;
+    border-color: red;
+}
+
+.p_invested_page{
+    background-color:rgb(149, 158, 158);
+    color:rgb(255, 255, 255);
+    transition: background-color 1s;
+    transition: transform 0.5 ease-in-out;
+}
+.p_invested_page:hover{
+    transform: translate(5px,-2px);
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.1);
+}
+
+
+a{
+    color: white;
+}
+
+.stocks_of_interests_grid{
+    min-width: 100%;
+}
