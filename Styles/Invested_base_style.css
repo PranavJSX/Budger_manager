@@ -10,9 +10,10 @@
     background-color: inherit;
     border: solid; 
      border-width: 2px;
-    max-width: fit-content;
+    /* max-width: fit-content; */
     min-height: fit-content;
     min-width: 100%;
+    overflow: hidden    ;
 }
 
 #investedflex{
@@ -23,7 +24,7 @@
 }
 
 .invested_section1:hover{
-    transform: scale(1);
+    transform: scale(1.02);
     transition-delay: 60ms;
     transition:all .90s ease;
     background-color:var( --side-color-2);
@@ -64,25 +65,31 @@
     background-color:rgb(90, 94, 98);
     border: solid;
     border-width: 2px;
-    max-width: 600px;
+    /* max-width: auto; */
     color:rgb(255, 255, 255);
+    max-width: 80%;
+    color: black;
 }
 
 .Invested_grid_1:hover{
-    background-color: azure;
-    border-color: red;
+    background-color: aqua;
+    /* border-color: red; */
+    transition: 60ms;
+    transition: all .90s ease;
 }
+
 
 .p_invested_page{
     background-color:rgb(149, 158, 158);
     color:rgb(255, 255, 255);
     transition: background-color 1s;
     transition: transform 0.5 ease-in-out;
+    
 }
 .p_invested_page:hover{
     transform: translate(5px,-2px);
     background-color: rgb(0, 0, 0);
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 
 
@@ -92,4 +99,11 @@ a{
 
 .stocks_of_interests_grid{
     min-width: 100%;
+    max-width: 100%;
+}
+
+#stocks_of_interest_div{
+    background-color: aqua;
+    margin-top: 20px;
+    min-width: 100%
 }
