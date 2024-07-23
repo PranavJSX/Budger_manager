@@ -9,8 +9,8 @@ function Header() {
   const [page,setPage] = useState('HOME')
   function handler(e){
     // console.log(e.target.innerText)
-    let secion_name = e.target.innerText
-    setPage(secion_name)
+    let section_name = e.target.innerText
+    setPage(section_name)
   };
   return (
     <div className='Header'>
